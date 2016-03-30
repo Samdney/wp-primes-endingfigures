@@ -1,0 +1,95 @@
+\documentclass{amsart}
+\usepackage{footnote}
+\usepackage{amssymb}
+\usepackage{url}
+%\usepackage{graphicx}
+
+% ======================================================================
+\begin{document}
+% ======================================================================
+\title[NOTES: Primes - Ending figures]{NOTES: Primes\\
+- \\
+Ending figures of primes and not primes}
+
+\author{Carolin Z\"obelein}
+\urladdr{http://www.carolin-zoebelein.de}
+\email{contact@carolin-zoebelein.de, PGP: D4A7 35E8 D47F 801F 2CF6 2BA7 927A FD3C DE47 E13B}
+\thanks{wp-primes-endingfigures (old name: notes00000primes00000), CC BY-ND 3.0 DE}
+
+\subjclass[2010]{Primary 11N05}
+\date{October 9, 2015}
+
+\dedicatory{My notes are only sketches. Not final results! They are to be a basis for common discussion in terms of community based research.}
+% ======================================================================
+\begin{abstract}
+	Disproof of the proposition that all numbers with certain ending figures are always primes. (Twitter response)
+\end{abstract}
+
+\maketitle
+% ======================================================================
+% Introduction
+\section{Introduction}
+\label{s:introduction}
+% ----------------------------------------------------------------------
+At 2015/09/24 @NatalieCogan posted the following Tweet on Twitter: \url{https://twitter.com/NatalieCogan/status/647123082595794944}\\
+Content: "All numbers that end with $1$, $7$, $3$ or $9$ and aren't divisible by $3$ is a prime number (except for $91=7\cdot 13$)."\\
+After some requests I will show how you can easy disproof this proposition.
+% ======================================================================
+% Repetition: Integer divisible numbers
+\section{Repetition: Integer divisible numbers}
+\label{s:repetition}
+% ----------------------------------------------------------------------
+In the following a very short repetition about integer divisble numbers. Apart from $2$ and $3$ all prime numbers can be written as (set $O_{-}$) $p_{-} = 6\gamma_{-} - 1$ or (set $O_{+}$) $p_{+} = 6\gamma_{+} + 1$, $\gamma \in \mathbb{N}$. But of course not all of this numbers are prime numbers like, for example, $6\cdot4 + 1 = 25 = 5 \cdot 5$. We are able (see \cite{CaZoeb}) to describe all integer divisible numbers of the set $O_{-}$ by the equation
+\begin{equation}
+	\gamma_{-} = 6\alpha\beta + \alpha - \beta
+\label{eq:set-_eq+-}\end{equation}
+and all integer divisible numbers of the set $O_{+}$ by the equations
+\begin{equation}
+	\gamma_{+,1} = 6\alpha\beta - \alpha - \beta
+\label{eq:set+_eq--}\end{equation}
+and
+\begin{equation}
+	\gamma_{+,2} = 6\alpha\beta + \alpha + \beta,
+\label{eq:set+_eq++}\end{equation}
+$\alpha, \beta \in \mathbb{N}$. With this we are able to disproof the proposition.
+% ======================================================================
+% Disproof of proposition
+\section{Disproof of proposition}
+\label{s:disproof}
+% ----------------------------------------------------------------------
+We start with $p = 6\gamma + 1$. For all $\gamma = 5n$, $n \in \mathbb{N}$, we receive all $p$-values which ends with "$0$", since $p = 6 \cdot 5 n + 1 = 30n + 1$. So we look at $p = 6\gamma + c$, $\gamma = 5n$, $c \in [0, 9]$ and will discuss all of this cases.
+\begin{itemize}
+	\item Case $c=0,2,4,6,8$: $\Rightarrow$ $p$ is always even and integer divisible by $2$!
+	\item Case $c=3, 9$: $\Rightarrow$ $p$ is always odd and integer divisible by $3$!
+	\item Case $c=1$: $\Rightarrow$ We have our starting case $p = 6\cdot5n + 1$	
+	\item Case $c=5$: $\Rightarrow$ We have $p = 6\cdot5n + 5 = 6\cdot5n + 6 - 1 = 6\left(5n + 1\right) - 1$	
+	\item Case $c=7$: $\Rightarrow$ We have $p = 6\cdot5n + 7 = 6\cdot5n + 6 + 1 = 6\left(5n + 1\right) + 1$
+\end{itemize}
+Now we will make the disproof of the cases $c=1$,$5$ and $7$.\\
+Be $c=1$:\\
+We take equation (\ref{eq:set+_eq++}) and have to show that exists solutions for
+\[ 5n = 6\alpha\beta + \alpha + \beta. \]
+This is, for example, easy fulfilled for $\alpha = 5a$ and $\beta = 5b$, $a,b \in \mathbb{N}$.
+\begin{flushright}$\Box$\end{flushright}
+Be $c=5$:\\
+We take equation (\ref{eq:set-_eq+-})
+\begin{equation*}\begin{split}
+	5n + 1 & = 6\alpha\beta + \alpha - \beta\\
+	5n & = 6\alpha\beta + \alpha - \beta - 1.
+\end{split}\label{eq:c5}\end{equation*}
+This is, for example, easy fulfilled for $\alpha = 5a$ and $\beta = 5b - 1$, $a,b \in \mathbb{N}$.
+\begin{flushright}$\Box$\end{flushright}
+Be $c=7$:\\
+We also take equation (\ref{eq:set+_eq++})
+\begin{equation*}\begin{split}
+	5n + 1 & = 6\alpha\beta + \alpha + \beta\\
+	5n & = 6\alpha\beta + \alpha + \beta - 1
+\end{split}\label{eq:c7}\end{equation*}
+This is, for example, easy fulfilled for $\alpha = 5a$ and $\beta = 5b + 1$, $a,b \in \mathbb{N}$.
+\begin{flushright}$\Box$\end{flushright}
+% ======================================================================
+% Bibliography
+\bibliographystyle{amsplain}
+\bibliography{notes00000primes00000}
+% ======================================================================
+\end{document}
